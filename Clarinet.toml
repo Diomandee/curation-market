@@ -1,0 +1,39 @@
+[project]
+name = "curation-market"
+authors = []
+description = ""
+telemetry = true
+requirements = []
+cache_dir = "/Users/mohameddiomande/.clarinet/cache"
+[contracts.challange-me-reputation]
+path = "contracts/challange-me-reputation.clar"
+depends_on = ["sip010-ft-trait"]
+
+[contracts.challange-nft]
+path = "contracts/challange-nft.clar"
+depends_on = ["sip010-ft-trait"]
+
+[contracts.continuous-token]
+path = "contracts/continuous-token.clar"
+depends_on = ["sip010-ft-trait"]
+
+[contracts.curation-market]
+path = "contracts/curation-market.clar"
+depends_on = ["sip010-ft-trait","challange-nft"]
+
+[contracts.sip010-ft-trait]
+path = "contracts/sip010-ft-trait.clar"
+depends_on = []
+
+[repl]
+costs_version = 2
+parser_version = 2
+
+[repl.analysis]
+passes = ["check_checker"]
+
+[repl.analysis.check_checker]
+strict = false
+trusted_sender = false
+trusted_caller = false
+callee_filter = false
